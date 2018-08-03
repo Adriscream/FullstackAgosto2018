@@ -1,0 +1,23 @@
+package com.curso.fullstack.sopra.mvc.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.View;
+
+@Controller
+public class PersonasController {
+
+	//http://localhost:8080/persona/saludo/juan?prfix=Hola
+	@GetMapping(path = "/persona/saludo/{briam}--{apellido}")
+	//si solo hay un path variable, no hace falta poner esto @PathVariable("briam"), vale con poner @PathVariable() String briam
+	public String saludo(@PathVariable("briam") String nombre,@PathVariable("apellido") String apellido) {
+		return "Clave1";
+	}
+	@GetMapping(path = "/persona/saludo")
+	public String saludo2() {
+		return "Clave1";
+
+	}
+
+}

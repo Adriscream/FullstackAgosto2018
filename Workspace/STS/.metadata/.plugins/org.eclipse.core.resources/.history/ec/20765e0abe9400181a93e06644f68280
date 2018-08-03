@@ -1,0 +1,52 @@
+package com.curso.fullstack.sopra.mvc.controllers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+@Controller
+public class PersonasController {
+
+	// http://localhost:8080/persona/saludo/juan?prefix=Hola
+	@GetMapping(path = "/persona/saludo/{briam}--{apellido}")
+	// si solo hay un path variable, no hace falta poner esto
+	// @PathVariable("briam"), vale con poner @PathVariable() String briam
+	// Los parametros ?prfix=Hola en la url se recogen con @RequestParam("prefix")
+	// String prefijo, si solo hay uno pasa lo mismo que con @PathVariable
+	public String saludo(@PathVariable("briam") String nombre, @PathVariable("apellido") String apellido,
+			@RequestParam("prefix") String prefijo, Model model) {
+		model.put("dato", "Esto es un objetop string que hereda del tipo objeto");
+		return "exito";
+	}
+
+	// Son diferentes gracias a la ruta,url
+	@GetMapping(path = "/persona/saludo")
+	public String saludo2() {
+		return "Clave2";
+
+	}
+
+	// Podemos recibir datos por el body de una peticion POST, necesitamos un
+	// formulario HTML
+	//Vamos a devolver un modelandview, necesitamos crear un modelo, para eso utilizamos un mapeo
+	@PostMapping(path = "/persona/saludo")
+	public ModelAndView saludo3(@RequestBody Persona persona) {
+		Map<String, Object> model = new HashMap<>();// Se pone Object para poder enviar cualquier tipo de objeto con una etiqueta como con setAttribute
+		model.put("dato", "Esto es un objetop string que hereda del tipo objeto");
+		model.put("persona", new Persona());
+
+		return new ModelAndView("exito", model);
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.curso.fullstack.sopra.mvc;
+
+public class H2Configuration {
+
+}

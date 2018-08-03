@@ -1,0 +1,19 @@
+package com.curso.fullstack.sopra.simpsons.mvc.bussines;
+
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import com.curso.fullstack.sopra.simpsons.mvc.dto.Personaje;
+ 
+@Component
+@Service
+//@Repository
+//@Configuration
+//@Controller
+public class PersonasNegocio {
+	// Se compromete a realizar un trabajo, en este caso darme una persona partiendo
+	// de su id
+	public static Personaje getPersonaById(String id) {
+		return null;
+	}
+}

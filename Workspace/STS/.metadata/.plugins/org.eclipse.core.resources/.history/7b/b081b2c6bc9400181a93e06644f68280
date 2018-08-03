@@ -1,0 +1,36 @@
+package com.curso.fullstack.sopra.mvc.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.View;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+@Controller
+public class PersonasController {
+
+	//http://localhost:8080/persona/saludo/juan?prefix=Hola
+	@GetMapping(path = "/persona/saludo/{briam}--{apellido}")
+	//si solo hay un path variable, no hace falta poner esto @PathVariable("briam"), vale con poner @PathVariable() String briam
+	//Los parametros ?prfix=Hola en la url se recogen con @RequestParam("prefix") String prefijo, si solo hay uno pasa lo mismo que con @PathVariable
+	public String saludo(@PathVariable("briam") String nombre,@PathVariable("apellido") String apellido,@RequestParam("prefix") String prefijo) {
+		return "Clave1";
+	}
+	//Son diferentes gracias a la ruta,url 
+	@GetMapping(path = "/persona/saludo")
+	public String saludo2() {
+		return "Clave1";
+
+	}
+	//Podemos recibir datos por el body de una peticion POST, necesitamos un formulario HTML
+	@PostMapping(path = "/persona/saludo")
+	public String saludo3(@RequestBody Persona persona) {
+		return "Clave1";
+
+	}
+
+}

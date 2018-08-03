@@ -1,0 +1,28 @@
+package com.curso.fullstack.sopra.banca.mvc.bussines;
+
+import java.util.Random;
+
+import org.springframework.stereotype.Component;
+
+import com.curso.fullstack.sopra.banca.mvc.dto.Cliente;
+
+@Component
+public class GenerateCC {
+	public String generateCC(Cliente cliente) {
+		String entidad = "2034";
+		String oficina = "3500";
+		String codigoControl = "45";
+		String cc = "";
+		 Random rand = new Random();
+		    for (int i = 0; i < 10; i++)
+		    {
+		        int n = rand.nextInt(10) + 0;
+		        cc += Integer.toString(n);
+		    }
+		    
+		cliente.setCuentaCorriente(entidad + oficina + codigoControl + cc);
+		cliente.setSaldo(0.0);
+
+		return cliente.getCuentaCorriente();
+	}
+}

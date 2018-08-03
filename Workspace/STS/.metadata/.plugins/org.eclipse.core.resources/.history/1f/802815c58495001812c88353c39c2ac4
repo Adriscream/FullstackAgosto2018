@@ -1,0 +1,35 @@
+package com.curso.fullstack.sopra.simpsons.mvc.dto;
+
+import java.util.Set;
+
+public class Personaje {
+	private String id;
+	private String name;
+	private int age;
+	private String parent;
+	private String mother;
+	private String married;
+
+	private Set<String> brothers; // Set no acepta duplicado
+	private Set<String> cousins;
+	private Set<String> children;
+
+	public Personaje() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public void addBrothers(String bro) {
+		this.cousins.add(bro);
+	}
+
+	public void addCousins(String cousins) {
+		this.cousins.add(cousins);
+	}
+
+	public void addChildren(String children) {
+		this.cousins.add(children);
+	}
+
+}

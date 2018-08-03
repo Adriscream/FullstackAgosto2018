@@ -1,0 +1,13 @@
+package com.curso.fullstack.sopra.simpsons.mvc.dto;
+
+import java.util.Set;
+
+public class Personajes {
+	private String id;
+	private String name;
+	private int age;
+	private String parent;
+	private String mother;
+	private Set<String> brothers; // Set no acepta duplicado
+	private Set<String> cousins;	
+}

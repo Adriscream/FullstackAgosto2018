@@ -1,0 +1,10 @@
+package com.curso.fullstack.sopra.simpsons.mvc.bussines;
+
+import com.curso.fullstack.sopra.simpsons.mvc.dto.Personaje;
+
+public class PersonasNegocio {
+	
+	public static Personaje getPersonaById(String id) {
+		return null;
+	}
+}

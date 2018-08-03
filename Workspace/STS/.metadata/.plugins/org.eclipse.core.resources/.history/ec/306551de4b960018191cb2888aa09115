@@ -1,0 +1,52 @@
+package com.curso.fullstack.sopra.banca.mvc.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Cliente {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private String cuentaCorriente;
+	@Column(nullable=false,unique=true)
+	private String DNI;
+	private String name;
+	private String password;
+	@Column(nullable=false,unique=true)
+	private String mail;
+	private Double saldo;
+	private boolean habilitado;
+	public Cliente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Cliente(String cuentaCorriente, String dNI, String name, String password, String mail, Double saldo,
+			boolean habilitado) {
+		super();
+		this.cuentaCorriente = cuentaCorriente;
+		DNI = dNI;
+		this.name = name;
+		this.password = password;
+		this.mail = mail;
+		this.saldo = saldo;
+		this.habilitado = habilitado;
+	}
+	public Cliente(String dNI, String name, String password, String mail, boolean habilitado) {
+		super();
+		DNI = dNI;
+		this.name = name;
+		this.password = password;
+		this.mail = mail;
+		this.habilitado = habilitado;
+	}
+	
+	
+
+
+	
+	
+	
+}

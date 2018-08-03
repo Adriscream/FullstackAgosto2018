@@ -1,0 +1,17 @@
+package com.curso.fullstack.sopra.banca.mvc.bussines;
+
+import org.springframework.stereotype.Component;
+
+import com.curso.fullstack.sopra.banca.mvc.dto.Cliente;
+
+@Component
+public class GenerateCC {
+	public void generateCC(Cliente cliente) {
+		String entidad = "2034";
+		String oficina = "3500";
+		String codigoControl = "45";
+		String cc = Integer.toString(12301000);
+
+		return entidad + oficina + codigoControl + cc;
+	}
+}

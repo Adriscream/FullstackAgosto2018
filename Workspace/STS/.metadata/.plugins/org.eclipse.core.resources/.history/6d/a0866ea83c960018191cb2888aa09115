@@ -1,0 +1,9 @@
+package com.curso.fullstack.sopra.mvc.persistance;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+public interface PersonaRepository extends JpaRepository<Persona, Long>{//Los generics no aceptan tipos primitivos long (referencia) , Long es un wrapper o envoltorio y son los que aceptan los generic
+
+}

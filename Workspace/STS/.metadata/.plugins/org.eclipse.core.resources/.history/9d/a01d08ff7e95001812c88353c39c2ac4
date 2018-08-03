@@ -1,0 +1,13 @@
+package com.curso.fullstack.sopra.simpsons.mvc.dto;
+
+import java.util.List;
+
+public class Personajes {
+	private String id;
+	private String name;
+	private int age;
+	private String parent;
+	private String mother;
+	private List<String> brothers;
+	private List<String> cousins;	
+}

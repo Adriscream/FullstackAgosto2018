@@ -1,0 +1,15 @@
+package com.curso.fullstack.sopra.simpsons.mvc.bussines;
+
+import java.util.List;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+public interface PersonasServicio {
+
+	Persona getPersonaById(long id);
+
+	List<Persona> getPersonas();
+
+	String nuevaPersona(Persona persona);
+
+}

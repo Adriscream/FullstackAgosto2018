@@ -1,0 +1,9 @@
+package com.curso.fullstack.sopra.banca.mvc.persistance;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.curso.fullstack.sopra.banca.mvc.dto.Cliente;
+
+public interface ClienteRepository extends JpaRepository<Cliente, String>{
+
+}

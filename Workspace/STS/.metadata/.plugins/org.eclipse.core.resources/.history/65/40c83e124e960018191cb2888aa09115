@@ -1,0 +1,12 @@
+package com.curso.fullstack.sopra.banca.mvc.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/clientes")
+public class ClientesController {
+	//@Query("select c from Cliente c where c.name = :name")//consulta JPQL, basado en clases, no en tablas, los nombres son los de la clase
+	//List<Cliente> findByName(@Param("name") String name);
+	//QueryDSLotra forma.
+}

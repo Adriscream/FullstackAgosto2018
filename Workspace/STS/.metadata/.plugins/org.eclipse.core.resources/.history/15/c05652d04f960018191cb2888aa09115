@@ -1,0 +1,39 @@
+package com.curso.fullstack.sopra.banca.mvc.bussines;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.curso.fullstack.sopra.banca.mvc.dto.Cliente;
+import com.curso.fullstack.sopra.banca.mvc.persistance.ClienteRepository;
+
+@Service
+public class ClientesServicioImpl implements ClientesServicio {
+
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Override
+	public Cliente getClienteById(String id) {
+		return clienteRepository.findById(id).get();
+		}
+
+	@Override
+	public List<Cliente> getClientes() {
+		return clienteRepository.findAll();
+	}
+
+	@Override
+	public long nuevaCliente(Cliente cliente) {
+		cliente = clienteRepository.saveAndFlush(cliente);							
+		//Aqui se realizaria el envio de un mail
+		return cliente.getCuentaCorriente();
+	}
+
+	@Override
+	public void borrarCliente(long id) {
+		// ClienteRepository.delete(ClienteRepository.findById(id).get());
+		clienteRepository.deleteById(id);
+	}
+}

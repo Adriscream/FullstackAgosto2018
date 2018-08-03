@@ -1,0 +1,16 @@
+package com.curso.fullstack.sopra.mvc.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.View;
+
+@Controller
+public class PersonasController {
+
+	@GetMapping(path="/persona/saludo")
+	public View saludo() {
+		return null;
+
+	}
+
+}

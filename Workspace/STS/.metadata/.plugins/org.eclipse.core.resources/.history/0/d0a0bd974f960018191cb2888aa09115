@@ -1,0 +1,9 @@
+package com.curso.fullstack.sopra.banca.mvc.bussines;
+
+import com.curso.fullstack.sopra.banca.mvc.dto.Cliente;
+
+public interface ClientesServicio {
+
+	Cliente getClienteById(String id);
+
+}

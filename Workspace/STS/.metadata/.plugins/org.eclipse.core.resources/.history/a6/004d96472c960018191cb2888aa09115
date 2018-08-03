@@ -1,0 +1,13 @@
+package com.curso.fullstack.sopra.simpsons.mvc.bussines;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+public class PersonasServicioImpl implements PersonasServicio {
+
+	@Override
+	public Persona getPersonaById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

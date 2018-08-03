@@ -1,0 +1,5 @@
+package com.curso.fullstack.sopra.simpsons.mvc.dto;
+
+public class Personajes {
+
+}

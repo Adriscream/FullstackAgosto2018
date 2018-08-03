@@ -1,0 +1,9 @@
+package com.curso.fullstack.sopra.simpsons.mvc.bussines;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+
+public interface PersonasServicio {
+
+	Persona getPersonaById(long id);
+
+}

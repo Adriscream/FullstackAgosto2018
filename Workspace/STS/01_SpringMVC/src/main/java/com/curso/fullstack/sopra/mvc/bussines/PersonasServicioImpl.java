@@ -1,0 +1,41 @@
+package com.curso.fullstack.sopra.mvc.bussines;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.curso.fullstack.sopra.mvc.dto.Persona;
+import com.curso.fullstack.sopra.mvc.persistance.PersonaRepository;
+
+@Service // Estas anotaciones no se pueden hacer en las interfaces
+public class PersonasServicioImpl implements PersonasServicio {
+
+	@Autowired
+	private PersonaRepository personaRepository;
+
+	@Override
+	public Persona getPersonaById(long id) {
+		return personaRepository.findById(id).get();
+	}
+
+	@Override
+	public List<Persona> getPersonas() {
+		return personaRepository.findAll();
+	}
+
+	@Override
+	public long nuevaPersona(Persona persona) {
+		persona = personaRepository.saveAndFlush(persona);// Flush actualiza la BBDD automaticamente, sino se guarda en
+															// la memoria y luego se actualiza al hacer un flush
+		//Aqui se realizaria el envio de un mail
+		return persona.getId();
+	}
+
+	@Override
+	public void borrarPersona(long id) {
+		// personaRepository.delete(personaRepository.findById(id).get());
+		personaRepository.deleteById(id);
+	}
+
+}

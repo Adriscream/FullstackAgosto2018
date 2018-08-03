@@ -1,0 +1,5 @@
+package com.curso.fullstack.sopra.mvc.dto;
+
+public class Mensaje {
+private String mensaje;
+}

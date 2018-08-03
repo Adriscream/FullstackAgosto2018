@@ -1,0 +1,5 @@
+package com.curso.fullstack.sopra.banca.mvc.servicios;
+
+public class ClientesServicioImpl implements ClientesServicio {
+
+}

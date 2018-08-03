@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- xlm name space, hace que sea reconocible la etiqueta th  -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Exito Yegua</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $.get("persona/saludo/Adrian--degfer?prefix=kiki", function(data, status){ //$.get nos hace una peticion get por ayax a nuestro dominio 
+//             alert("Data: " + data + "\nStatus: " + status);//Estas funciiones se suelen llamar Callbacks
+//         });
+//     });
+// });
+// $(document).ready(function(){
+//     $("button").click(function(){
+//     	$.ajax({
+//     	    type: "POST",
+//     	    contentType: "application/json",
+//     	    url: 'http://localhost:8080/persona/saludo',
+//     	    data: JSON.stringify({  
+//     	    			id: 5,
+//              		 	nombre: "Caramierda" 
+//              	  }),
+//     	    dataType: "json"
+//     	});
+//         $.post("/persona/saludo", //Esta version es como la de arriba pero que Jquery rellena el ayax
+//         {
+//           id: 5,
+//           nombre: "Caramierda"
+//         },
+//         function(data,status){
+//             alert("Data: " + data + "\nStatus: " + status);
+//         });//Callback, el que se encarga de procesar el resultado
+//     });
+// });
+
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.ajax(
+                {
+                  url: "/persona/saludo",
+                  type: "POST",
+                  data: JSON.stringify({
+                    "id" : 1,
+                    "nombre" : "Victor"
+                  }),
+                  contentType:"application/json; charset=utf-8",
+                  dataType:"html",
+                  success: function(data, status) {
+                        alert("Data: " + data + "\nStatus: " + status);
+                  }
+                }
+            );
+        });
+    });
+</script>
+</head>
+<body>
+	<p th:text="${dato}" />
+	<!-- ${dato} tiene que ir el mismo nombre que hemos puesto en el modelo del controlador -->
+
+
+	<p th:if="${persona!=null}" th:text="${persona.id}" />
+	<!-- ${dato} tiene que ir el mismo nombre que hemos puesto en el modelo del controlador -->
+	<p th:if="${persona!=null}" th:text="${persona.nombre}" />
+	<!-- ${dato} tiene que ir el mismo nombre que hemos puesto en el modelo del controlador -->
+	<button>Send an HTTP GET request to a page and get the result
+		back</button>
+		<div id=resultado></div>
+</body>
+</html>

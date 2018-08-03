@@ -1,0 +1,11 @@
+package com.curso.fullstack.sopra.banca.mvc.servicios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ClientesServicioImpl implements ClientesServicio {
+
+	@Autowired
+	private ClientesServicio clientesServicio;
+}
